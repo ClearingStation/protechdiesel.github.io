@@ -1,0 +1,407 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ProTech Diesel Steinbach</title>
+		<style>
+		body {background: #000; margin: 0; padding: 0;font-family: 'Open Sans', sans-serif;font-size: em;line-height: 1.6em;color: #EDEDED;}
+		.block {diplay: block;}
+		.hidden {display: none;}
+		.container {max-width: 1024px; width: 100%; margin: 0 auto;}
+		.container-wide {max-width: 1300px; width: 100%; margin: 0 auto;}
+		.container-extra-wide {max-width: 90%; width: 100%; margin: 0 auto;}
+		.small-container {max-width: 750px;margin: 0 auto;}
+		.flex {display: flex;}
+		.flex-vertical {flex-direction: column;}
+		.flex-space-between {justify-content: space-between;}
+		.flex-equal > * {flex-grow: 1; width: 50%;}
+		.flex-vertically-centered {align-items: center;}
+		.img-responsive {width: 100%;max-width: 100%;}
+		ul, ol {margin: 0; padding: 0}
+		.text-center {text-align: center;}
+		.text-black {color: #000000}
+		.light-background {background: #fff; color: #000;}
+		.dark-background {background: #181818; color: #fff;}
+		.border-top-grey {border-top: 1px solid #444444;}
+		.border-top-lightgrey {border-top: 1px solid #CFCFCF;}
+		.border-between-grey {position:relative;}
+		.border-between-grey > div {position: relative;}
+		.border-between-grey > div::before {background: #444444;bottom: 0;content: " ";left: 0;position: absolute;width: 1px;top: 0;}
+		.border-between-grey > div:first-of-type::before {width: 0;}
+		.padding-large {padding: 40px;}
+		.padding-medium {padding: 20px;}
+		.padding-top {padding-top: 10px;}
+		.padding-top-none {padding-top: 0 !important;}
+		.padding-bottom-none {padding-bottom: 0 !important;}
+		.margin-large {margin: 40px;}
+		.margin-small-top {margin-top: 10px;}
+		.margin-large-top {margin-top: 40px;}
+		.margin-large-bottom {margin-bottom: 40px !important;}
+		.margin-small-bottom {margin-bottom: 10px !important;}
+		.margin-extra-large-bottom {margin-bottom: 80px !important;}
+		.margin-top-none {margin-top: 0 !important;}
+		.margin-bottom-none {margin-bottom: 0 !important;}
+		a {color: inherit;}
+		.no-underline {text-decoration: none;}
+		.full-bg {background-repeat: no-repeat;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+		.full-bg.fixed {background-attachment: fixed;}
+		.full-height {min-height: 100vh;}
+		.opacity-75 {opacity:0.75;}
+		/* text */
+		h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {font-family: inherit;font-weight: 500;line-height: 1.1;color: inherit;}
+		h1,.h1 {font-size: 2em;margin: 0.67em 0;margin-top: 40px;margin-bottom: 20px;font-size: 59px;}
+		h2,.h2 {font-size: 1.8em; line-height: 1.2em; margin-bottom: 20px;}
+		h3,.h3 {font-size: 42px; line-height: 1.2em; margin-bottom: 20px;}
+		h4,.h4 {font-size: 1.2em; line-height: 1.2em; margin-bottom: 20px;}
+		.bold {font-weight: 600;}
+		p {color: #aaaaaa;font-weight: 300;letter-spacing: 0.02em;margin: 0 0 20px;font-family: 'Open Sans', sans-serif;font-size: 22px;line-height: 1.82857143;}
+		/* header */
+		#logo {align-self: center;}
+		/* header {background: #fff;} */
+		#brand-logo {width: auto;min-width: 300px;border-radius: 3px;}
+		header ul {margin: 10px 0;}
+		header ul > li {list-style: none;margin: 0 10px;}
+		header ul li a {font-size: 16px;font-weight: 300;text-decoration: none;opacity: 0.9;}
+		header ul li a:hover {opacity: 1 !important;}
+		#topMenueWrapper {align-self: flex-end; margin-right: 15px;}
+		#topMenueWrapper ul {margin-bottom: 0;}
+		#topMenueWrapper ul li a {font-size: 14px;font-weight: 300;padding-bottom: 5px; opacity: 0.7;}
+		#mainMenueNav {border-top: 1px solid #272727}
+		#mainMenue > li > a {padding-top: 5px;padding-left: 15px;padding-right: 15px;line-height: 30px;}
+		/* breadcrumb */
+		#social-buttons {padding: 10px 0 5px 0px;}
+		footer a {text-decoration: none;}
+		footer a:hover {text-decoration: underline;}
+		#breadcrumbs {padding: 20px;}
+		footer ol.breadcrumb {list-style: none; align-items: center; margin: 10px}
+		footer ol.breadcrumb li {margin-right: 10px;}
+		footer ol.breadcrumb li svg {margin-bottom: -5px;}
+		footer a {color: #fff;}
+		footer ul > li {list-style: none;margin: 0 10px;}
+		#footerMenu {border-top: 1px solid #323232;border-bottom: 1px solid #323232;padding: 30px 15px;}
+		#footerMenu a {padding: 5px 15px;display: inline-block;font-size: 13px;opacity: 0.8;}
+		#copyright {font-size: 0.8em;padding: 20px 10px;opacity: 0.7;}
+		/* content */
+		.content {padding: 20px;margin: 50px 0;}
+		.content p {color: #000000}
+		.compact-text {line-height: 1.6em !important;font-size: 18px;}
+		.contact-section {background-image: url(contact-bg-left.png), url(contact-bg-right.png);background-position: left top, right top;background-repeat: no-repeat;background-color: #181818;}
+		.contact-section i {background-image: url('footer-sprites.png');background-repeat: no-repeat;height: 122px;display: inline-block;width: 127px;opacity: 0.9;}
+		.contact-section i.money-icon {background-position: 0 0;}
+		.contact-section i.progress-icon {background-position: -127px 0;}
+		.contact-section i.fit-icon {background-position: -254px 0;}
+		#services .flex > * {position:relative;background-position: center center; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;min-height: 400px; cursor: pointer;}
+		#services .flex > *:before {content: ' '; display: block; width: 100%; height: 100%; position: absolute; background: rgba(0,0,0,0.4); z-index: 1;}
+		#services .flex > *:hover:before {background: rgba(0,0,0,0.1);}
+		#services .flex > * * {position:relative; z-index: 2;}
+		.bio {background: #fff;padding: 7% 5% 10% 6%;color: #000000;}
+		.bio h4 {margin-bottom: 6.25px;font-size: 31px;}
+		.bio h5 {margin-top: 0px;font-size: 22px;}
+		.bio p {margin-bottom: 0px; color: #000000}
+		.bio a {text-decoration: none;}
+		@media (max-width: 1200px) {
+			.contact-section {background-size: 40%;}
+			#contact-section-headline {margin-top: 170px !important;}
+		}
+		@media (max-width: 600px) {
+			.contact-section {background-image: url(contact-bg-left-small.png), url(contact-bg-right-small.png);background-size: auto;}
+			.flex {display: block !important; width: 100%;}
+			.flex-equal > *, .contain {width: 100%;max-width: fit-content;}
+			.mb-text-center {text-align: center;}
+			header {padding: 20px;}
+			#logos > div {margin-left: -40px}
+			#contact-section-headline {margin-top: 50px !important;}
+			h1, .h1 {font-size: 3em}
+			#breadcrumbs ol {display: flex !important;}
+			#mainPhoneNumber {font-size: 1.8em !important;}
+			#mainPhoneNumber img {width: 30px}
+			#services a {display: block; min-height: 230px !important;}
+		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="flex flex-space-between container-extra-wide mb-text-center padding-medium">
+				<div id="logo">
+					<a id="logo-link" href="index.html">
+						<img id="brand-logo" src="logo.jpg" alt="ProTech Diesel Steinbach" class="img-responsive">
+					</a>
+					<h1 class="hidden">ProTech Diesel Steinbach</h1>
+				</div>
+				<nav id="topMenueWrapper" class="padding-top">
+					<ul id="topMenue" class="flex">
+						<li role="presentation" class="true"><a href="tel:(204) 408 8486">(204) 408 8486</a></li>
+						<li role="presentation" class="true"><a href="24h-service.html">24h-Service</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="flex flex-vertical">
+				<nav id="mainMenueNav" class="navbar navbar-inverse navbar-static-top navbar-lower">
+					<ul id="mainMenue" class="flex padding-medium container-extra-wide">
+						<li role="presentation" class="true"><a href="index.html">Home</a></li>
+						<li role="presentation" class="true"><a href="about.html">About Us</a></li>
+						<li role="presentation" class="true"><a href="services.html">What we do</a></li>
+						<li role="presentation" class="true"><a href="contact.html">Contact us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330" style="display: none; enable-background:new 0 0 330 330;" xml:space="preserve">
+			<!-- arrow -->
+			<symbol id="arrow-right-light" viewBox="0 0 330 330">
+				<path id="XMLID_222_" fill="#ffffff" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606C255,161.018,253.42,157.202,250.606,154.389z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+			</symbol>
+		</svg>
+
+
+
+		<!-- main content -->
+		<div class="full-bg fixed margin-large-bottom" style="background-image: url(cat_tire.jpg);">
+			<div style="background: rgba(0,0,0,0.47);" class="padding-large">
+				<div class="container">
+					<div class="content text-center">
+						<!-- <h1 class="bold">Pro diesel tech meets<br/> pro technicians.</h1> -->
+						<h1 class="bold">We repair diesel machines.</h1>
+						<p style="color: #fff;">We are providing the best service for diesel trucks, excavators and pickups. We empower your employees to do their best work daily and focus on the highest quality standards, individual customer care and fair and transparent prices.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="light-background margin-large-bottom">
+			<div class="container text-center padding-large">
+				<div id="logos" class="flex flex-space-between">
+					<div>
+						<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="200" height="110.066" viewBox="0 0 800 110.066" id="svg2" xml:space="preserve"><defs id="defs23" /><g style="display:none" id="Grade"></g><g id="Camada_1"></g><g id="Área_de_trabalho"></g><g id="Linhas-guia"></g> <g id="Page_1"> <g id="Camada_1_1_"> <g id="g10"> <polygon points="0,4.723 0,19.33 23.959,19.33 70.846,107.261 128.543,107.261 175.43,19.184 199.385,19.033 199.437,4.723 127.761,4.723 127.761,19.083 146.849,19.083 113.74,81.595 77.933,19.301 104.05,19.184 104.004,4.723 0,4.723 " style="fill:#0d3896;fill-rule:evenodd" id="polygon12" /> <polygon points="462.405,4.723 462.405,19.33 486.357,19.33 533.245,107.261 590.944,107.261 637.831,19.184 661.789,19.033 661.832,4.723 590.169,4.723 590.169,19.083 609.249,19.083 576.141,81.595 540.33,19.301 566.455,19.184 566.406,4.723 462.405,4.723 " style="fill:#0d3896;fill-rule:evenodd" id="polygon14" /> <path d="M 344.515,4.723 L 344.515,19.33 L 368.47,19.33 L 368.51,91.118 L 343.255,91.118 L 343.255,107.119 L 368.527,107.262 L 488.139,107.262 L 488.139,59.532 L 472.558,59.532 C 471.704,84.803 449.782,91.152 440.548,91.152 C 432.087,91.152 415.693,91.119 415.693,91.119 L 415.693,19.301 L 439.288,19.183 L 439.256,4.722 L 344.515,4.722 L 344.515,4.723 z " style="fill:#0d3896;fill-rule:evenodd" id="path16" /> <path d="M 262.808,94.13 C 248.453,94.13 236.822,76.935 236.822,55.713 C 236.822,34.486 248.453,17.278 262.808,17.278 C 277.159,17.278 288.794,34.486 288.794,55.713 C 288.794,76.935 277.159,94.13 262.808,94.13 L 262.808,94.13 z M 263.864,1.777 C 223.144,1.777 190.135,26.024 190.135,55.922 C 190.135,85.822 223.143,110.066 263.864,110.066 C 304.581,110.066 337.595,85.822 337.595,55.922 C 337.595,26.024 304.581,1.777 263.864,1.777 L 263.864,1.777 z " style="fill:#0d3896;fill-rule:evenodd" id="path18" /> <path d="M 725.215,93.857 C 710.865,93.857 699.235,76.377 699.235,54.804 C 699.235,33.239 710.866,15.755 725.215,15.755 C 739.567,15.755 751.195,33.239 751.195,54.804 C 751.196,76.376 739.567,93.857 725.215,93.857 L 725.215,93.857 z M 726.276,0 C 685.547,0 652.548,24.642 652.548,55.028 C 652.548,85.413 685.546,110.05 726.276,110.05 C 766.99,110.05 800,85.413 800,55.028 C 800,24.642 766.99,0 726.276,0 L 726.276,0 z " style="fill:#0d3896;fill-rule:evenodd" id="path20" /> </g> </g> </g> </svg>
+					</div>
+					<div>
+						<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="200" height="110" viewBox="0 0 112 20" id="svg2"> <defs id="defs4" /> <g transform="translate(-254.26343,-163.48068)" id="layer1"> <g transform="translate(256.02387,164.53694)" id="g2418"> <path d="M 45.365,7.256 L 44.379,7.279 L 44.379,3.336 L 45.509,3.336 C 46.365,3.336 46.646,3.964 46.646,5.336 C 46.646,6.708 46.33,7.256 45.365,7.256 M 50.34,16.246 L 50.34,12.02 C 50.34,10.016 49.625,8.851 48.097,8.577 C 49.873,8.106 50.359,6.616 50.359,4.708 C 50.359,2.018 49.392,0.346 46.255,0.346 L 40.637,0.346 L 40.64,17.763 L 44.38,17.763 L 44.38,10.19 L 45.302,10.19 C 46.202,10.19 46.629,10.811 46.629,11.64 L 46.629,16.273 C 46.629,17.043 46.784,17.611 46.89,17.762 L 50.673,17.762 C 50.541,17.618 50.34,17.017 50.34,16.246" id="path2384" /> <path d="M 8.387,14.801 C 9.056,14.243 9.171,13.552 9.171,12.932 L 9.171,10.328 L 5.535,10.328 L 5.535,13.861 C 5.535,14.367 5.126,14.777 4.621,14.777 C 4.116,14.777 3.74,14.367 3.74,13.861 L 3.74,3.852 C 3.74,3.347 4.116,2.937 4.621,2.937 C 5.126,2.937 5.535,3.347 5.535,3.852 L 5.535,7.408 L 9.166,7.408 L 9.166,3.719 C 9.166,1.681 7.834,0.004 4.59,0 C 1.259,0 0,1.685 0,3.723 L 0,14.174 C 0,16.194 1.604,17.722 3.655,17.722 L 4.781,17.722 L 8.387,14.801 z" id="path2386" /> <path d="M 103.314,7.247 L 102.321,7.247 L 102.321,3.327 L 103.457,3.327 C 104.311,3.327 104.594,3.955 104.594,5.326 C 104.594,6.699 104.28,7.247 103.314,7.247 M 108.285,16.237 L 108.285,12.01 C 108.285,10.007 107.573,8.842 106.045,8.567 C 107.821,8.097 108.307,6.608 108.307,4.701 C 108.307,2.009 107.337,0.337 104.203,0.337 L 98.584,0.337 L 98.584,17.754 L 102.333,17.754 L 102.333,10.182 L 103.248,10.182 C 104.15,10.182 104.572,10.802 104.572,11.632 L 104.572,16.265 C 104.572,17.036 104.731,17.603 104.836,17.754 L 108.616,17.754 C 108.486,17.609 108.285,17.007 108.285,16.237" id="path2388" /> <path d="M 90.796,11.487 L 91.77,3.36 L 92.742,11.487 L 90.796,11.487 z M 94.275,0.303 L 89.246,0.303 L 86.258,17.753 L 90.044,17.753 L 90.415,14.674 L 93.12,14.672 L 93.489,17.753 L 97.278,17.753 L 94.275,0.303 z" id="path2390" /> <polygon points="69.198,17.751 69.198,0.341 73.034,0.341 73.034,14.446 77.031,14.446 77.031,17.751 69.198,17.751 " id="polygon2392" /> <rect width="3.8329999" height="17.41" x="63.333" y="0.34200001" id="rect2394" /> <polygon points="69.198,17.751 69.198,0.341 73.034,0.341 73.034,14.446 77.031,14.446 77.031,17.751 69.198,17.751 " id="polygon2396" /> <polygon points="77.954,17.751 77.954,0.341 81.787,0.341 81.787,14.446 85.786,14.446 85.786,17.751 77.954,17.751 " id="polygon2398" /> <path d="M 57.057,7.764 L 55.913,7.75 L 55.913,3.334 L 57.051,3.334 C 58.023,3.334 58.186,4 58.186,5.594 C 58.186,7.241 58.022,7.764 57.057,7.764 M 58.022,0.342 L 52.177,0.342 L 52.177,17.759 L 55.925,17.759 L 55.925,10.847 L 58.022,10.847 C 61.465,10.847 62.046,8.653 62.046,5.594 C 62.047,2.536 61.466,0.342 58.022,0.342" id="path2400" /> <polygon points="34.161,3.66 34.161,7.11 38.13,7.11 38.13,10.521 34.161,10.521 34.161,14.387 38.877,14.385 38.877,17.746 30.322,17.75 30.322,0.338 30.318,0.338 38.722,0.338 38.722,3.66 34.161,3.66 " id="polygon2402" /> <polygon points="22.721,15.211 22.721,3.726 20.211,3.726 20.211,0.343 29.293,0.343 29.293,3.726 26.771,3.726 26.771,17.701 25.695,17.701 22.721,15.211 " id="polygon2404" /> <polygon points="24.348,17.727 15.504,10.316 6.34,17.727 24.348,17.727 " id="polygon2406" style="fill:#ffc400" /> <path d="M 14.526,8.319 L 15.505,3.315 L 16.479,8.319 L 14.526,8.319 z M 18.027,0.361 L 12.961,0.361 L 10.01,13.604 L 15.506,9.167 L 21.236,13.969 L 18.027,0.361 z" id="path2408" /> </g> </g> </svg>
+					</div>
+					<div>
+						<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="250" height="110" viewBox="0 0 19.314805 4.0662357" version="1.1" id="svg21755" inkscape:version="0.92.0 r15299" sodipodi:docname="detroit diesel.svg"> <defs id="defs21749"> <style id="style21757"> .cls-1 { fill: #231f20; } </style> </defs> <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-255.81418,-306.92983)"> <g id="g21777" transform="matrix(0.26458333,0,0,0.26458333,255.94669,307.06214)"> <path id="path21763" transform="translate(0,-0.17)" d="m 23.33,4.36 h -5.79 v 6.25 h 5.78 c 1.92,0 2.59,-0.63 2.59,-2.18 V 6.54 C 25.91,5 25.24,4.36 23.32,4.36 M 24,7.88 C 24,8.77 23.68,9 22.86,9 h -3.4 V 5.92 h 3.4 C 23.68,5.92 24,6.15 24,7 Z m 4.82,1.23 h 5 v 1.5 H 26.9 V 4.36 h 6.84 v 1.45 h -4.92 v 1 h 4.66 v 1.3 H 28.82 Z M 56.46,4.29 h -3.07 c -1.73,0 -2.75,0.43 -2.75,2.26 v 1.87 c 0,1.83 1,2.26 2.75,2.26 h 3.07 c 1.73,0 2.75,-0.43 2.75,-2.26 V 6.56 c 0,-1.83 -1,-2.26 -2.75,-2.26 m 0.79,3.53 c 0,0.9 -0.19,1.25 -1.1,1.25 H 53.7 c -0.91,0 -1.1,-0.35 -1.1,-1.25 V 7.15 C 52.6,6.37 52.79,5.9 53.8,5.9 H 56 c 1,0 1.2,0.48 1.2,1.25 z M 70.12,4.36 v 1.56 h -2.69 v 4.69 H 65.51 V 5.92 H 62.82 V 4.36 Z m -22.34,0 H 42 v 6.25 h 1.92 V 9 h 3 c 0.6,0 0.79,0.21 0.79,0.87 v 0.75 h 1.92 V 9.55 c 0,-1 -0.48,-1.28 -1,-1.38 v 0 C 49.51,7.96 49.7,7.47 49.7,6.63 v -0.4 c 0,-1.12 -0.4,-1.86 -1.87,-1.86 m 0,2.42 c 0,0.45 -0.19,0.66 -0.71,0.66 H 43.91 V 5.92 h 3 c 0.6,0 0.88,0.1 0.88,0.65 z M 60.31,4.36 h 1.92 v 6.25 h -1.92 z m -26.1,0 h 7.3 v 1.56 h -2.7 v 4.69 H 36.9 V 5.92 h -2.7 z" class="cls-1" inkscape:connector-curvature="0" style="fill:#231f20" /> <polygon id="polygon21765" points="70.72,4.99 70.72,4.29 70.46,4.29 70.46,4.2 71.09,4.2 71.09,4.29 70.83,4.29 70.83,4.99 " class="cls-1" style="fill:#231f20" /> <polygon id="polygon21767" points="71.21,4.2 71.35,4.2 71.6,4.87 71.85,4.2 72,4.2 72,4.99 71.9,4.99 71.9,4.33 71.65,4.99 71.56,4.99 71.31,4.33 71.31,4.99 71.21,4.99 " class="cls-1" style="fill:#231f20" /> <path id="path21769" transform="translate(0,-0.17)" d="M 12.28,10.71 10.05,8.42 h 1.67 v -1 c 0,0 0.04,-4.72 -4.72,-4.72 a 4.87,4.87 0 0 0 -2.89,1 l 0.7,0.72 a 3.65,3.65 0 0 1 5.88,2.9 h -3 l 4.62,4.74 a 7,7 0 0 0 1.58,-2.87 z" class="cls-1" inkscape:connector-curvature="0" style="fill:#231f20" /> <path id="path21771" transform="translate(0,-0.17)" d="M 7,0.32 A 7,7 0 0 0 2.45,2 l 0.8,0.82 A 5.81,5.81 0 0 1 7,1.55 5.75,5.75 0 0 1 13,7.39 c 0,0.94 0,1 0,1 h 1 A 7,7 0 0 0 7,0.32" class="cls-1" inkscape:connector-curvature="0" style="fill:#231f20" /> <path id="path21773" transform="translate(0,-0.17)" d="M 4,6.39 H 2.37 v 1 c 0,0 0,4.68 4.72,4.68 A 5.19,5.19 0 0 0 10,11 L 9.29,10.27 A 3.65,3.65 0 0 1 3.41,7.37 H 6.44 L 1.83,2.63 A 7,7 0 0 0 0.23,5.58 L 1.81,4.11 Z m 6.83,5.51 A 5.79,5.79 0 0 1 7,13.27 5.8,5.8 0 0 1 1.13,7.43 c 0,-0.87 0,-1 0,-1 H 0.07 a 7.2,7.2 0 0 0 -0.07,1 7,7 0 0 0 11.65,5.34 z" class="cls-1" inkscape:connector-curvature="0" style="fill:#231f20" /> <path id="path21775" transform="translate(0,-0.17)" d="m 13.34,0.17 a 0.89,0.89 0 1 1 -0.89,0.88 0.88,0.88 0 0 1 0.89,-0.88 m 0,1.64 a 0.73,0.73 0 0 0 0.73,-0.76 0.73,0.73 0 1 0 -1.46,0 0.73,0.73 0 0 0 0.73,0.76 M 13,0.54 h 0.4 c 0.25,0 0.36,0.1 0.36,0.3 a 0.27,0.27 0 0 1 -0.27,0.28 l 0.3,0.46 H 13.62 L 13.34,1.13 H 13.17 V 1.58 H 13 Z M 13.16,1 h 0.17 c 0.14,0 0.27,0 0.27,-0.17 0,-0.17 -0.12,-0.16 -0.23,-0.16 h -0.21 z" class="cls-1" inkscape:connector-curvature="0" style="fill:#231f20" /> </g> </g> </svg>
+					</div>
+					<div>
+						<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="50" height="110" viewBox="0 0 9.3546407 8.6467741" version="1.1" id="svg19952" inkscape:version="0.92.0 r15299" sodipodi:docname="cumminsBLK.svg"> <defs id="defs19946"> <clipPath id="clipPath19878" clipPathUnits="userSpaceOnUse"> <path inkscape:connector-curvature="0" id="path19876" d="m 324,84.24 h 25.767 V 108 H 324 Z" /> </clipPath> </defs> <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-23.283404,-324.252)"> <path inkscape:connector-curvature="0" id="path19882" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778" d="m 26.649251,328.06625 -0.327378,-0.46778 c -0.0575,-0.0751 -0.135466,-0.14605 -0.229658,-0.0801 -0.149225,0.10442 -0.01588,0.2547 -0.0095,0.26423 l 0.319969,0.45649 -0.299861,0.2099 -0.414161,-0.59125 c -0.04974,-0.0713 -0.08431,-0.11748 -0.152047,-0.1972 l 0.296686,-0.20779 0.09737,0.12912 0.0032,-0.002 c -0.02081,-0.14852 0.05539,-0.26317 0.174272,-0.34678 0.09631,-0.0674 0.240594,-0.0928 0.341489,-0.0194 -0.0127,-0.13265 0.05962,-0.26353 0.176741,-0.35031 0.170392,-0.11924 0.374298,-0.0967 0.497064,0.079 l 0.372181,0.53128 -0.299861,0.20991 -0.326672,-0.46638 c -0.0575,-0.0751 -0.135114,-0.14569 -0.228953,-0.0801 -0.149578,0.10478 -0.01658,0.25436 -0.01058,0.26282 l 0.319617,0.4565 z m -0.934508,0.6544 -0.06632,-0.0847 c -0.01305,0.12735 -0.07055,0.21484 -0.172155,0.2861 -0.170392,0.11924 -0.374297,0.0967 -0.496711,-0.0776 l -0.372886,-0.5327 0.299861,-0.2099 0.327378,0.46743 c 0.0575,0.0755 0.135466,0.1464 0.229658,0.0804 0.149225,-0.10477 0.01623,-0.2547 0.0095,-0.26423 l -0.31997,-0.45649 0.299862,-0.2099 0.414161,0.59125 c 0.04974,0.0713 0.08431,0.11748 0.152047,0.1972 z m -1.039989,0.72637 c -0.312914,0.21802 -0.742245,0.14217 -0.959908,-0.17074 -0.218017,-0.31292 -0.140759,-0.74295 0.172155,-0.96097 l 0.408869,-0.2861 0.225778,0.3242 -0.364066,0.25294 c -0.134409,0.0938 -0.16757,0.2787 -0.07408,0.41311 0.09384,0.13476 0.278695,0.16792 0.413456,0.0741 l 0.364772,-0.25577 0.224719,0.3228 z m 2.66453,-3.0487 0.09737,0.12911 0.0032,-0.002 c -0.02081,-0.14816 0.05539,-0.26282 0.174625,-0.34642 0.09596,-0.0674 0.240594,-0.0928 0.341136,-0.0194 -0.0127,-0.13264 0.05962,-0.26352 0.176742,-0.3503 0.170391,-0.11924 0.374297,-0.0967 0.497064,0.079 l 0.37218,0.53128 -0.299861,0.2099 -0.326672,-0.46637 c -0.05715,-0.0755 -0.135114,-0.1457 -0.228953,-0.0801 -0.149578,0.10478 -0.01658,0.25435 -0.01058,0.26282 l 0.319616,0.45649 -0.299861,0.20991 -0.327377,-0.46779 c -0.0575,-0.0755 -0.135467,-0.14605 -0.229306,-0.0801 -0.149578,0.10443 -0.01623,0.25436 -0.0099,0.26388 l 0.31997,0.45685 -0.299861,0.2099 -0.414162,-0.59161 c -0.04974,-0.0709 -0.08431,-0.11712 -0.152047,-0.19685 z m 1.260123,-1.40053 0.148519,0.21202 -0.303036,0.21202 -0.14852,-0.21202 z m 0.798688,1.1437 -0.299861,0.20991 -0.556683,-0.79481 0.299861,-0.2099 z m -0.164747,-1.06926 0.06632,0.0847 c 0.01305,-0.12735 0.0702,-0.21484 0.172156,-0.2861 0.170392,-0.11924 0.374297,-0.0967 0.496358,0.0776 l 0.372886,0.53269 -0.299508,0.20991 -0.327731,-0.46779 c -0.0575,-0.0751 -0.135466,-0.14605 -0.229305,-0.0801 -0.149578,0.10478 -0.01623,0.25471 -0.0095,0.26423 l 0.319617,0.4565 -0.299862,0.2099 -0.413808,-0.59125 c -0.04974,-0.0713 -0.08467,-0.11748 -0.152047,-0.19721 z m -1.097139,2.39853 h 3.637845 v -3.0861 h -1.038931 l -0.242005,0.17075 c -0.01905,-0.0268 -0.04022,-0.0473 -0.06526,-0.0526 -0.02822,-0.006 -0.06138,3.5e-4 -0.102659,0.0293 -0.04445,0.0311 -0.05362,0.0751 -0.02152,0.12136 0.04092,0.0582 0.160867,-0.0303 0.390525,-0.10372 0.115711,-0.0363 0.221544,-0.0233 0.312561,0.10619 0.147108,0.21061 -0.01305,0.40287 -0.195086,0.53022 -0.194733,0.13653 -0.412397,0.23001 -0.58032,-0.0134 l 0.284692,-0.19932 c 0.01199,0.0272 0.03881,0.0483 0.07056,0.0568 0.0321,0.008 0.06844,0.007 0.09701,-0.0134 0.05856,-0.0413 0.08608,-0.0931 0.05045,-0.14393 -0.09843,-0.14076 -0.510117,0.27234 -0.711906,-0.0159 -0.123472,-0.17604 0.0028,-0.35772 0.144639,-0.47272 l -2.422878,3.5e-4 c 0,0 -1.94063,-0.0568 -3.175,1.3074 0,0 -1.15323,1.0234 -1.15323,2.89136 0,0.0903 0.0028,0.17569 0.0081,0.26247 7.05e-4,0.0289 0.01905,0.22048 0.0321,0.32208 0.20708,1.50107 1.145469,2.34704 1.145469,2.34704 1.307394,1.30739 3.118203,1.25059 3.118203,1.25059 h 4.054475 v -3.0861 h -3.654061 c 0,0 -1.218142,-0.008 -1.218142,-1.10419 0,-1.08021 1.234369,-1.10455 1.234369,-1.10455" /> <path inkscape:connector-curvature="0" id="path19886" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778" d="m 32.205536,332.50335 v -0.0878 h 0.05856 c 0.02963,0 0.06174,0.007 0.06174,0.0416 0,0.0437 -0.03246,0.0462 -0.06879,0.0462 z m 0,0.0363 h 0.04939 l 0.07479,0.12276 h 0.04798 l -0.08043,-0.12453 c 0.04127,-0.005 0.07338,-0.0275 0.07338,-0.078 0,-0.0561 -0.03316,-0.0808 -0.100189,-0.0808 h -0.10795 v 0.28328 h 0.04304 z m 0.05186,0.22683 c 0.134056,0 0.248356,-0.10407 0.248356,-0.24624 0,-0.14111 -0.1143,-0.24482 -0.248356,-0.24482 -0.135114,0 -0.249414,0.10371 -0.249414,0.24482 0,0.14217 0.1143,0.24624 0.249414,0.24624 m -0.200025,-0.24624 c 0,-0.11641 0.08784,-0.2039 0.200025,-0.2039 0.111125,0 0.198967,0.0875 0.198967,0.2039 0,0.11818 -0.08784,0.20532 -0.198967,0.20532 -0.112183,0 -0.200025,-0.0871 -0.200025,-0.20532" /> </g> </svg>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="services" class="margin-large-bottom">
+			<div class="flex flex-equal border-between-grey">
+				<a href="truck-service-and-repair.html" style="background-image: url(volvo_truck.jpg); background-position: 50% 80%;" class="no-underline full-bg block">
+					<div class="margin-large">
+						<h3>Truck Service and Repair</h3>
+					</div>
+				</a>
+				<a href="air-conditioning-service.html" style="background-image: url(air_conditioning.jpg);" class="full-bg no-underline">
+					<div class="margin-large">
+						<h3>Air Conditioning Service</h3>
+					</div>
+				</a>
+			</div>
+			<div class="flex flex-equal border-between-grey border-top-grey">
+				<a href="engine-diagnostics.html" style="background-image: url(engine_diagnostics.jpg); background-position: 20% 50%" class="no-underline full-bg block">
+					<div class="margin-large">
+						<h3>Engine Diagnostics</h3>
+					</div>
+				</a>
+				<a href="webasto-service.html" style="background-image: url(webasto.jpg)" class="no-underline full-bg block">
+					<div class="margin-large">
+						<h3>Webasto Service</h3>
+					</div>
+				</a>
+			</div>
+		</div>
+
+
+		<!-- reviews -->
+		<div id="reviews">
+		  <h2>Discover What Our Customers Love About Us</h2>
+		  <h4>Read Our 5-Star Reviews and Join the Satisfied Community</h4>
+		  <div class="review">
+		    <div class="rating">⭐⭐⭐⭐⭐</div>
+		    <p class="review-text">Excellent service, Very professional and quick</p>
+		    <p class="review-author">- Alex Kru</p>
+		  </div>
+
+		  <div class="review">
+		    <div class="rating">⭐⭐⭐⭐⭐</div>
+		    <p class="review-text">
+		      I am flashed, the best workshop I know. The boss is very competent and professional, a true engine specialist.
+		      <br /><br />
+		      I have finally found my workshop!
+		    </p>
+		    <p class="review-author">- Tori Mai</p>
+		  </div>
+
+		  <div class="review">
+		    <div class="rating">⭐⭐⭐⭐⭐</div>
+		    <p class="review-text">
+		      A shop where I know my truck is in the best hands. Such precise and clean work with great attention to detail is just as amazing. No hidden or unnecessary additional costs as is often the case. I highly recommend this shop.
+		    </p>
+		    <p class="review-author">- Am Anfang war das Wort</p>
+		  </div>
+
+		  <style>
+		    /* Style for the review section */
+		    #reviews {
+		    max-width: 600px;
+		    margin: 0 auto;
+		    padding: 20px;
+		    margin-bottom: 100px
+		    }
+
+		    /* Style for individual reviews */
+		    .review {
+		    border: 1px solid #ddd;
+		    padding: 15px;
+		    margin-bottom: 20px;
+		    background-color: #f9f9f9;
+		    }
+
+		    /* Style for star ratings */
+		    .rating {
+		    font-size: 24px;
+		    color: #ffcc00; /* Yellow color for stars */
+		    }
+
+		    /* Style for review text */
+		    .review-text {
+		    font-size: 16px;
+		    color: #000000;
+		    margin-top: 10px;
+		    }
+
+		    /* Style for author name */
+		    .review-author {
+		    font-size: 14px;
+		    font-style: italic;
+		    color: #888;
+		    margin-top: 0px;
+		    margin-bottom: 0;
+		    }
+		  </style>
+		</div>
+
+		<!-- contact -->
+		<div class="contact-section dark-background">
+			<div class="container">
+				<div class="padding-large">
+				  <h1 id="contact-section-headline" class="text-center" style="margin-top: 60px;">
+				    Get Back on the Road Fast with Our Truck Repair Services
+				  </h1>
+
+					<div class="text-center">
+					  <p>
+					    At our truck shop, we offer a comprehensive range of services designed specifically for your business. Whether you're hauling heavy loads, navigating city streets with frequent stops, or tackling rugged unpaved roads for timber transport, we've got you covered - all while ensuring you stay profitable.
+
+					    <br />
+					    <br />
+					    Call us Now for Expert Service
+					  </p>
+					</div>
+
+					<div class="flex flex-space-between margin-large-top">
+						<div class="col-md-4 text-center">
+							<i class="money-icon"></i>
+							<br>
+							<p class="opacity-75">Proven solutions</p>
+						</div>
+						<div class="col-md-4 text-center">
+							<i class="progress-icon"></i>
+							<br>
+							<p class="opacity-75">Fulfilling every requirement</p>
+						</div>
+						<div class="col-md-4 text-center">
+							<i class="fit-icon"></i>
+							<br>
+							<p class="opacity-75">Suitable for any diesel job</p>
+						</div>
+					</div>
+					
+					<h3 id="mainPhoneNumber" class="text-center">
+						<img src="phone-symbol.png" align="absmiddle" alt="telefon"> <a href="tel:(204) 408 8486" class="no-underline">(204) 408 8486</a>
+					</h3>
+
+				</div>
+			</div>
+
+			<div class="flex flex-equal border-top-grey border-between-grey">
+				<div>
+					<div class="padding-large">
+						<h4>ProTech Diesel</h4>
+
+						<p>
+							Call at: <a href="tel:(204) 408 8486">(204) 408 8486</a>
+							<br>
+							Email: <a href="mailto:albertlipps@gmail.com">click here</a> <br>
+							<br>
+							37144 Keating Rd
+							<br />
+							Steinbach, MB R5G 2S6
+						</p>
+					</div>
+				</div>
+				<div>
+					<div class="padding-large">
+						<h4>Our Hours</h4>
+						<p>
+							Monday-Friday <br>
+							8am-5pm <br>
+							<br>
+							Emergency Service <br>
+							24 Hours
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- footer -->
+		<footer id="footer">
+			<div id="social-buttons" class="text-center light-background">
+				<a href="mailto:albertlipps@gmail.com" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAAQlBMVEUAAADAwMCAgIDLy8sWFhYICAghISH///+fn5/z8/NGRkbo6OiGhoY7OzuYmJhzc3OQkJBra2uurq7q6ur8/PxdXV1/80UCAAAAqklEQVQ4jbWTyxKDIAxFQ3gGEMHq//9qra1OwUYWHc/2nhAyAQjZAItCgqz5HEBHuKh/0YlvwJSUykVbLx6zJTmw9cFuBMUIaD+MjCB2QTCC3AXJCGkXHCMM9M7JM4LGzSBk8tVYBNHkuSkPrZP/gfJxElIKh/5HFz3kYA/WmzaOGr/ilZliPUsh20D1xtzcCjbVwilvFrK4E9yjuIHO6gzE3uclvDjD5PAEF4MHpRWWw1YAAAAASUVORK5CYII="/></a>&nbsp;
+				<a href="https://www.instagram.com/protechdiesel" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAx9JREFUWIXF1z2IXVUQB/DfW142uutGLEURq2DCKoIJGiFg4UdjYaVYBKxEgppCIRZ2NokoISgpgoWiheVWAUUEDRo/ErIuMYKSSkEtRJO8t4FsfGsxc9j77t677z1C3IFpzsyZ+Z/5uDMXungQC/gbqzeYL+EE5jEF92Lxf3Bc58UEYWETnBc+0cmQzNkcutRJJONQD31cyzuDyt2OyOeUqKlbMDOO0e4YOmfwIc7hClYqAAapU5x3sAU3i/zuwwMbGd8oAr/jLRxJnW0iVV3DLy75LIBWRFr7qfcS3sj7EwE4gOP5ov14HLOYrgFQcb6Kq+n8UxxLQM/jaFsUmqrzq3RyG0626LTxFfyA3/BtRq2D0y36jYcHEtzBCZ2v4kvsxJMJ4mAlouv0m4qwh/MiZ482yK/hZ3yfegPswCO4O53+kq/+S6TuXfyIZbXuaAKwLHI4q/n78DHexpLhLrgPr+IxfIA7sV2kZFva7Y0DYCV5Orn68vdFQd0kQrw7bXwtim6faNlnrRXotCjklbSxjup5+RW7RDjPVs4v4H5sxaF8TZH18mxr6lyoyM6mrV1pe8hfQVml0lLVNiO6YQlP4AWRokKzeFGEfwlfVGTFTvXLOSRsisjAWq8XOpfne3Brw71ZPJw65yvnHWvfm0H9UhOA66F/J7XbpFheXkdcFohTokvq1Md3qbOzcl7yXSIxEkAZKvWc7RVt9QkO10BcFL3+mWjH3RVZW02huQ3bInAXXhet9qbYaPak7JRow6viW7C9cq+tpoYUqvwnHsLtIqR1+Ue4p2ZsSrTfew363+AOUaB/1OVNEZgRFd3H5Qb5M/nyk6IziPrYm1GqU1+M52J3ZARW8UrKXm6RT8IbDqM2AKdFzuZMPo7rk3HDcTxqITkm1qvn8JTxN6LLoiOOi2G0XwywdTRqJTuEd1JnTiybWwzvgCWKVQC9BFFWstdEUU8EoNAZMYIXrd+KS3s1bcU78LSo/laadC1fTgDVHbDYqQKYSRAjabN/TP6Zwueb5Jwc2/P4yfX3+6S8KP7KdRPEghgqN9rxxfQ1j+5/Hp/Py5s4Y14AAAAASUVORK5CYII="/></a>&nbsp;
+				<a href="https://www.facebook.com/protechdiesel" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAWpJREFUWIXt16tOA1EQBuCPpVwChSBQBEdFRWmC4lGwOBRvgAaB5RXwVShCQCOApAIcCsmdhEtSEFuSpd0t23a7Nf2TEXt2zj//nDPnzC4UsI4aHvA9YHvGESoIYBWXOQRutcumCLUhBP+1o7HmkszJFp8R3qkOfs8yzOYa+6hiIhJkASXsJszLJPiFcD+jgVuxGTe30GFCWtxgC/VeJgcZCKgJV6AnZLECh/iKGV9CGYvCRNeSCPrZ+7eEJGZxivsUHH0JuE1IajstR7818JEwvpKWIIsijEPq2hqUgNTo9hSc4yXyfJfgV8dJy1hVeCLakLbgGtjAfMSKCQKmWvzmcRzH2+0KvGs2kH/wob1AS3GOedVAEcvDFFDGeNyLbrdgRrifv2jgNcZvGpOR59VOpP3chDcJnAdpOYZ+D4wEjASMBAT+dre88Rhob5t54izAjvCvJm9cYY+wH1SE3/dPBn8VPzVjVVD4AbAiGwiN6S+5AAAAAElFTkSuQmCC"/></a>
+			</div>
+			<div class="container">
+				<nav id="breadcrumbs" class="breadcrubs">
+					<ol class="breadcrumb flex">
+						<li><a href="index.html">Home</a></li>
+						<li><svg width="15" height="20"><use href="#arrow-right-light"/></svg></li>
+						<li>ProTech Diesel</li>
+					</ol>
+				</nav>
+				<nav class="footermenue">
+					<div>
+						<ul class="flex flex-space-between" id="footerMenu">
+							<ul>
+								<li role="presentation"><a href="index.html">Home</a></li>
+								<li role="presentation"><a href="about.html">About Us</a></li>
+								<li role="presentation"><a href="services.html">What we do</a></li>
+								<li role="presentation"><a href="contact.html">Contact us</a></li>
+							</ul>
+							<ul>
+								<li role="presentation"><a href="truck-service-and-repair.html">Truck Service and Repair</a></li>
+								<li role="presentation"><a href="air-conditioning-service.html">Air Conditioning Service</a></li>
+								<li role="presentation"><a href="engine-diagnostics.html">Engine Diagnostics</a></li>
+								<li role="presentation"><a href="webasto-service.html">Webasto Service</a></li>
+							</ul>
+							<ul>
+								<li role="presentation"><a href="24h-service.html">24h-Service</a></li>
+								<li role="presentation"><a href="https://www.facebook.com/protechdiesel">Facebook</a></li>
+								<li role="presentation"><a href="https://www.instagram.com/protechdiesel">Instagram</a></li>
+							</ul>
+					</div>
+				</nav>
+				<div id="copyright" class="text-center">
+					Copyright 2022 ProTech Diesel • <a href="contact.html">Contact us</a>
+				</div>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
